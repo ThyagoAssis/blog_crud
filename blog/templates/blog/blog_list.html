@@ -1,0 +1,41 @@
+
+
+<h1>Lista de Imagens</h1>
+<a href="{% url 'blog_form' %}">Adicionar Nova Imagem</a>
+<ul>
+    {% for image in blog_list %}
+    {{image.phtoto.url}}
+        <li>
+            {% if image.phtoto %}
+                <img src="{{ image.phtoto.url }}" alt="{{ image.title }}" width="100">
+            {% endif %}
+            <h2>{{ image.title }}</h2>
+            <p>{{ image.description }}</p>
+            <a href="{% url 'blog_update' image.pk %}">Editar</a>
+            <a href="{% url 'blog_delete' image.pk %}">Deletar</a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Lista </h1>
+    {% for blog in blog_list%}
+        <h1>{{blog.title}}</h1>
+        <img src="http://127.0.0.1:8000/media/fotos/austria-6934186_1280_Gl878em.jpg " alt="{{blog.title}}">
+        
+        <p>{{blog.description}}</p>
+    {% endfor %}
+</body>
+</html> -->

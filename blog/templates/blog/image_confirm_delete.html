@@ -1,0 +1,7 @@
+<h1>Deletar Imagem</h1>
+<p>Tem certeza que deseja deletar a imagem "{{ blog.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>
+<a href="{% url 'blog_list' %}">Cancelar</a>
